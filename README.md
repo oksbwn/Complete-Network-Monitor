@@ -1,11 +1,52 @@
-![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/appsmith_logo_primary.png)
+# 🛰️ Home Network Monitoring & Analytics Dashboard
+![image](https://github.com/user-attachments/assets/83c25bd0-20e5-4e66-bd76-2b2781659adf)
 
-This app is built using Appsmith. Turn any datasource into an internal app in minutes. Appsmith lets you drag-and-drop components to build dashboards, write logic with JavaScript objects and connect to any API, database or GraphQL source.
+A real-time network monitoring and analytics platform built using **Node-RED**, **PostgreSQL**, **OpenWRT**, and **AppSmith**.  
+Track traffic, devices, and DNS activity across your home or small-office network using a clean, extensible architecture.
 
-![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/images/integrations.png)
+---
 
-### [Github](https://github.com/appsmithorg/appsmith) • [Docs](https://docs.appsmith.com/?utm_source=github&utm_medium=social&utm_content=appsmith_docs&utm_campaign=null&utm_term=appsmith_docs) • [Community](https://community.appsmith.com/) • [Tutorials](https://github.com/appsmithorg/appsmith/tree/update/readme#tutorials) • [Youtube](https://www.youtube.com/appsmith) • [Discord](https://discord.gg/rBTTVJp)
+## ✨ Features
 
-##### You can visit the application using the below link
+- 🔍 **Device Discovery & Tracking**
+  - Real-time DHCP leases, hostnames, MAC/IP mapping
+  - Scan logs, RTT (latency), and status monitoring
 
-###### [![](https://assets.appsmith.com/git-sync/Buttons.svg) ](http://192.168.0.7:8093/applications/6868f6c1e109052b74dd2f2d/pages/6868f6c1e109052b74dd2f2f) [![](https://assets.appsmith.com/git-sync/Buttons2.svg)](http://192.168.0.7:8093/applications/6868f6c1e109052b74dd2f2d/pages/6868f6c1e109052b74dd2f2f/edit)
+- 📡 **Traffic Monitoring**
+  - Per-device download/upload stats using `nlbwmon`
+  - Layer-7 protocol tracking (QUIC, HTTPS, etc.)
+  - Traffic deltas and rate (bytes/sec) calculations
+
+- 📊 **DNS Analytics**
+  - Summary of DNS queries per device
+  - Total vs blocked queries, top domains
+  - Latency averages
+
+- 📈 **Dashboards**
+  - AppSmith-powered UI with tables, charts, and trends
+  - Top protocols, hourly trends, device-specific views
+
+- 🛢️ **PostgreSQL Backend**
+  - Schemas for `network_devices`, `network_usage`, `dns_query_summary`, `device_scan_log`, and more
+  - Efficient queries for rollups and trends
+
+---
+
+## 🏗️ Architecture
+
+```text
+[ OpenWRT + nlbwmon + Adguard Home]
+        ↓
+   [ Node-RED ]
+   - Parses NLBW + DHCP
+   - Calculates deltas & rate
+   - Saves to PostgreSQL
+        ↓
+  [ PostgreSQL DB ]
+        ↓
+    [ AppSmith ]
+  - Interactive Dashboards
+  - Editable Device Table
+```
+
+
