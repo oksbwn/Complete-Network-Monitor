@@ -1,5 +1,6 @@
 # 🛰️ Home Network Monitoring & Analytics Dashboard
-![image](https://github.com/user-attachments/assets/83c25bd0-20e5-4e66-bd76-2b2781659adf)
+
+![demo](https://github.com/user-attachments/assets/0301e2aa-54b1-4b63-bfea-84320242e519)
 
 A real-time network monitoring and analytics platform built using **Node-RED**, **PostgreSQL**, **OpenWRT**, and **AppSmith**.  
 Track traffic, devices, and DNS activity across your home or small-office network using a clean, extensible architecture.
