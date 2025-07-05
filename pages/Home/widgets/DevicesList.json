@@ -1,5 +1,6 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": false,
   "animateLoading": true,
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -51,18 +52,21 @@
     "total_mb",
     "total_download_mb",
     "total_upload_mb",
+    "customColumn3",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1751708608172,
+  "columnUpdatedAt": 1751717104403,
   "columnWidthMap": {
     "customColumn1": 194,
-    "customColumn2": 252,
+    "customColumn2": 136,
+    "customColumn3": 60,
     "hostname": 156,
     "ip_address": 113,
     "is_dhcp": 87,
     "isdhcp": 93,
     "mac_address": 163,
     "name": 197,
+    "scan_time": 139,
     "status": 100
   },
   "customIsLoading": false,
@@ -160,6 +164,12 @@
     },
     {
       "key": "primaryColumns.vendor.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn3.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn3.borderRadius"
     }
   ],
   "dynamicPropertyPathList": [
@@ -182,6 +192,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.EditActions1.onSave"
+    },
+    {
+      "key": "primaryColumns.customColumn3.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -217,7 +230,7 @@
       "computedValue": "",
       "currencyCode": "USD",
       "decimals": 0,
-      "discardActionLabel": "Discard",
+      "discardActionLabel": "C",
       "discardBorderRadius": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "discardButtonColor": "#F22B2B",
       "discardButtonVariant": "TERTIARY",
@@ -236,11 +249,11 @@
       "isSaveDisabled": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( !DevicesList.updatedRowIndices.includes(currentIndex)))}}",
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "ACTION",
+      "label": "SAVE",
       "notation": "standard",
-      "onSave": "{{Name.Update(DevicesList.triggeredRow);}}",
+      "onSave": "{{Device.Update(DevicesList.triggeredRow);}}",
       "originalId": "EditActions1",
-      "saveActionLabel": "Save",
+      "saveActionLabel": "S",
       "saveBorderRadius": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "saveButtonColor": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "saveIconAlign": "left",
@@ -371,6 +384,46 @@
       "notation": "standard",
       "originalId": "customColumn2",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn3": {
+      "alias": "D",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{DevicesList.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#ef4444",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "trash",
+      "id": "customColumn3",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "D",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{showModal(Device_Delete_Modal.name);}}",
+      "originalId": "customColumn3",
+      "sticky": "right",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

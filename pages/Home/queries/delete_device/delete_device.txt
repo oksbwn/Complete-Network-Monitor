@@ -1,0 +1,2 @@
+DELETE FROM network_device
+WHERE id = {{this.params.deviceid}};

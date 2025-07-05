@@ -9,5 +9,16 @@ export default {
 		}).catch((err) => {
 			showAlert('Update failed ❌: ' + err.message, 'error');
 		})
+	},
+	Remove(id){
+		delete_device.run({
+			device_id: id
+		}).then(() => {
+			devices.run();
+			showAlert('Device removed successfully ✅', 'success');
+			devices.run()
+		}).catch((err) => {
+			showAlert('Removal failed ❌: ' + err.message, 'error');
+		})
 	}
 }    
