@@ -1,0 +1,12 @@
+SELECT
+  timestamp::date AS day,
+  SUM(total_queries) AS total_queries,
+  SUM(blocked_queries) AS blocked_queries
+FROM
+  dns_query_summary
+WHERE
+  timestamp >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY
+  day
+ORDER BY
+  day;

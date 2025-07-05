@@ -1,0 +1,17 @@
+WITH per_device AS (
+  SELECT 
+    d.display_name,d.mac_address,
+    SUM(u.connections) AS total_connections
+  FROM network_usage u
+  JOIN network_device d ON d.id = u.device_id
+  GROUP BY d.display_name,d.mac_address
+),
+total AS (
+  SELECT SUM(total_connections) AS grand_total FROM per_device
+)
+SELECT 
+  COALESCE(p.display_name,p.mac_address::text) AS Device,
+  ROUND(100.0 * p.total_connections / t.grand_total, 2) AS percentage
+FROM per_device p, total t
+ORDER BY percentage DESC
+LIMIT 10;

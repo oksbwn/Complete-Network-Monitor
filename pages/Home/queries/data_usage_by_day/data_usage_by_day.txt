@@ -1,0 +1,13 @@
+SELECT
+  timestamp::date AS day,
+  ROUND(SUM(download_bytes) / 1048576.0, 2) AS total_download_mb,
+  ROUND(SUM(upload_bytes) / 1048576.0, 2) AS total_upload_mb,
+  ROUND(SUM(download_bytes + upload_bytes) / 1048576.0, 2) AS total_mb
+FROM
+  network_usage
+WHERE
+  timestamp >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY
+  day
+ORDER BY
+  day;

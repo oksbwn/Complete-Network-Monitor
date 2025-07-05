@@ -1,0 +1,16 @@
+SELECT
+  d.id AS device_id,
+  COALESCE(d.display_name, d.hostname, d.name, d.mac_address::text) AS device_name,
+  d.ip_address,
+  date_trunc('minute', q.timestamp) - (EXTRACT(minute FROM q.timestamp)::int % 10) * INTERVAL '1 minute' AS interval_start,
+  COUNT(*) AS dns_requests
+FROM
+  dns_query_summary q
+JOIN
+  network_device d ON d.id = q.device_id
+WHERE
+  q.timestamp >= NOW() - INTERVAL '24 hours'  -- Optional: limit to last 24h
+GROUP BY
+  d.id, device_name, d.ip_address, interval_start
+ORDER BY
+  interval_start, d.id;

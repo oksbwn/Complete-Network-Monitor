@@ -1,0 +1,18 @@
+WITH totals AS (
+  SELECT 
+    app_protocol,
+    SUM(download_bytes + upload_bytes) AS total_traffic
+  FROM network_usage
+  WHERE app_protocol IS NOT NULL
+  GROUP BY app_protocol
+),
+grand_total AS (
+  SELECT SUM(total_traffic) AS grand_total FROM totals
+)
+SELECT 
+  t.app_protocol,
+  t.total_traffic,
+  ROUND((t.total_traffic * 100.0) / gt.grand_total, 2) AS percentage
+FROM totals t, grand_total gt
+ORDER BY t.total_traffic DESC
+LIMIT 10;

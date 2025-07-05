@@ -1,0 +1,6 @@
+UPDATE public.network_device
+SET
+  name = {{ this.params.name}},
+  display_name = {{ this.params.name}}
+WHERE
+  id =  {{ this.params.deviceid}};

@@ -1,0 +1,17 @@
+WITH per_device AS (
+  SELECT 
+  	d.display_name,d.mac_address,
+    SUM(q.blocked_queries) AS total_blocked
+  FROM dns_query_summary q
+  JOIN network_device d ON d.id = q.device_id
+  GROUP BY d.display_name,d.mac_address
+),
+total AS (
+  SELECT SUM(total_blocked) AS grand_total FROM per_device
+)
+SELECT 
+  COALESCE(p.display_name,p.mac_address::text) AS Device,
+  ROUND(100.0 * p.total_blocked / t.grand_total, 2) AS percentage
+FROM per_device p, total t
+ORDER BY percentage DESC
+LIMIT 10;

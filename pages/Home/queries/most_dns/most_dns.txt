@@ -1,0 +1,9 @@
+SELECT 
+  COALESCE(d.display_name, d.hostname, d.mac_address::text) AS device,
+  SUM(q.total_queries) AS queries,
+  ROUND(100.0 * SUM(q.total_queries) / SUM(SUM(q.total_queries)) OVER (), 2) AS percent
+FROM dns_query_summary q
+JOIN network_device d ON d.id = q.device_id
+GROUP BY device
+ORDER BY percent DESC
+LIMIT 10;

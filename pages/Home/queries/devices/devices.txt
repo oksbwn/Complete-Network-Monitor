@@ -1,0 +1,46 @@
+SELECT 
+  d.id AS device_id,
+	d.vendor,
+  COALESCE(d.display_name, d.hostname, d.name, d.mac_address::text) AS name,
+  d.hostname,
+  d.mac_address,
+  d.ip_address,
+  d.is_dhcp,
+    (
+    SELECT MAX(scan_time)
+    FROM device_scan_log dsl2
+    WHERE dsl2.device_id = d.id AND dsl2.status = true
+  ) AS last_seen,
+  COUNT(u.id) AS total_entries,
+
+  ROUND(SUM(u.download_bytes) / 1073741824.0, 2) AS total_download_mb,
+  ROUND(SUM(u.upload_bytes)   / 1073741824.0, 2) AS total_upload_mb,
+  ROUND(SUM(u.download_bytes + u.upload_bytes) / 1073741824.0, 2) AS total_mb,
+
+  ROUND(AVG(u.download_bytes) / 1048576.0, 2) AS avg_download_mb,
+  ROUND(AVG(u.upload_bytes)   / 1048576.0, 2) AS avg_upload_mb,
+
+  dsl.status,
+  dsl.rtt_ms,
+  dsl.scan_time
+
+FROM 
+  network_device d
+
+LEFT JOIN 
+  network_usage u ON u.device_id = d.id
+
+LEFT JOIN LATERAL (
+	SELECT status, rtt_ms, scan_time
+	FROM device_scan_log
+	WHERE device_scan_log.device_id = d.id
+	ORDER BY scan_time DESC
+	LIMIT 1
+) dsl ON true
+--WHERE u.timestamp between '2025-06-30T16:07:47.443Z' AND '2025-06-30T18:07:47.443Z'
+GROUP BY 
+  d.id, d.display_name, d.hostname, d.name, d.mac_address, d.ip_address, d.is_dhcp,
+  dsl.status, dsl.rtt_ms, dsl.scan_time
+
+ORDER BY 
+  total_mb DESC NULLS LAST;

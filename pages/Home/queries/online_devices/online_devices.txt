@@ -1,0 +1,8 @@
+SELECT 
+  date_trunc('minute', scan_time) + INTERVAL '60 min' * FLOOR(EXTRACT(minute FROM scan_time) / 10) AS hour,
+  COUNT(DISTINCT device_id) AS online_devices
+FROM device_scan_log
+WHERE status = true
+GROUP BY hour
+ORDER BY hour ASC
+LIMIT 12;

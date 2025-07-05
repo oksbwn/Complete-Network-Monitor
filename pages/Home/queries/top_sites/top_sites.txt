@@ -1,0 +1,28 @@
+WITH flattened AS (
+  SELECT unnest(domains) AS domain
+  FROM public.dns_query_summary
+),
+counts AS (
+  SELECT
+    domain,
+    COUNT(*) AS count
+  FROM flattened
+  GROUP BY domain
+),
+top10 AS (
+  SELECT
+    domain,
+    count
+  FROM counts
+  ORDER BY count DESC
+  LIMIT 10
+),
+total AS (
+  SELECT SUM(count) AS total_count FROM top10
+)
+SELECT
+  t.domain,
+  t.count,
+  ROUND(100.0 * t.count / total.total_count, 2) AS pct
+FROM top10 t, total
+ORDER BY t.count DESC;

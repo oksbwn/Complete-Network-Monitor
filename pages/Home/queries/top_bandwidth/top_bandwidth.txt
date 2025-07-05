@@ -1,0 +1,15 @@
+WITH top10 AS (
+    SELECT
+        COALESCE(d.display_name, d.mac_address::text)      AS device,
+        SUM(u.download_bytes + u.upload_bytes)    AS total_bytes
+    FROM network_usage u
+    LEFT JOIN network_device d ON u.device_id = d.id
+    GROUP BY device
+    ORDER BY total_bytes DESC
+    LIMIT 10
+)
+SELECT
+    device,
+    ROUND(100.0 * total_bytes / SUM(total_bytes) OVER (), 2)  AS pct_of_total
+FROM top10
+ORDER BY total_bytes DESC;

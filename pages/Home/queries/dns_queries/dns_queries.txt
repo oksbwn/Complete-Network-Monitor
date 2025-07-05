@@ -1,0 +1,14 @@
+SELECT 
+  d.id AS device_id,
+  COALESCE(d.display_name, d.hostname, d.name, d.mac_address::text) AS name,
+  SUM(dns.total_queries) AS total_queries,
+  SUM(dns.blocked_queries) AS total_blocked,
+  ROUND(100.0 * SUM(dns.blocked_queries) / NULLIF(SUM(dns.total_queries), 0), 2) AS block_rate
+FROM 
+  dns_query_summary dns
+JOIN 
+  network_devices d ON dns.device_id = d.id
+GROUP BY 
+  d.id, d.display_name, d.hostname, d.name, d.mac_address
+ORDER BY 
+  total_queries DESC;

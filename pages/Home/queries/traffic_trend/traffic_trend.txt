@@ -1,0 +1,8 @@
+SELECT 
+  date_trunc('hour', u.timestamp) AS hour,
+  SUM(u.download_delta) AS download,
+  SUM(u.upload_delta) AS upload
+FROM network_usage u
+GROUP BY hour
+ORDER BY hour DESC
+LIMIT 24;

@@ -1,0 +1,15 @@
+WITH totals AS (
+  SELECT 
+    SUM(blocked_queries) AS blocked,
+    SUM(total_queries - blocked_queries) AS allowed
+  FROM dns_query_summary
+), combined AS (
+  SELECT 'Blocked' AS type, blocked AS count FROM totals
+  UNION ALL
+  SELECT 'Allowed', allowed FROM totals
+)
+SELECT 
+  type,
+  count,
+  ROUND(100.0 * count / SUM(count) OVER (), 2) AS percent
+FROM combined;
