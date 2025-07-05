@@ -1,22 +1,27 @@
 [
     {
-        "id": "cfa039061075d593",
-        "type": "function",
+        "id": "22a6d42abfefb1b3",
+        "type": "delay",
         "z": "5143c870a6bb7dc2",
-        "g": "782ccc4afc7b816b",
-        "name": "SQL Queries",
-        "func": "const { ip, mac: rawMac, rtt, alive } = msg.payload;\n\nif (!rawMac) \n  return null;\n\nconst mac   = rawMac.toLowerCase();\n\nconst aliveLit = alive ? 'true' : 'false';\nconst rttLit   = (rtt !== null && rtt !== undefined) ? rtt : 'NULL';\n\nmsg.payload = [`\n      INSERT INTO network_device (\n        mac_address,\n        ip_address,\n        comment)\n      VALUES (\n        '${mac}',\n        '${ip}',\n        'auto discovered')\n      ON CONFLICT (mac_address) DO NOTHING;`.trim(),\n      \n      `INSERT INTO device_scan_log (\n        device_id,\n        status,\n        rtt_ms,\n        mac_address,\n        ip_address)\n      SELECT\n        id,\n        ${aliveLit},\n        ${rttLit},\n        '${mac}',\n        '${ip}'\n      FROM network_device\n      WHERE mac_address = '${mac}';`.trim()\n    ];\n\nreturn msg;\n",
+        "g": "2744cc825043da97",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "15",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1366.9630317687988,
-        "y": 204.51856327056885,
+        "x": 800,
+        "y": 800,
         "wires": [
             [
-                "2d4e240851bb540f"
+                "51823e6fe184f667"
             ]
         ]
     }
