@@ -7,7 +7,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "kpu2ivut0s": {
-      "data": "{{online_devices.data.map( (obj) =>{ return  {'x': moment(obj.hour).utcOffset(\"+05:30\").format(\"YYYY-MM-DD HH:mm:ss\"), 'y': obj.online_devices } })}}",
+      "data": "{{ \n  online_devices.data\n    .sort((a, b) => new Date(a.hour) - new Date(b.hour))\n    .map(obj => ({\n      x: moment(obj.hour).format(\"YYYY-MM-DD HH:mm:ss\"),\n      y: obj.online_devices\n    })) \n}}",
       "seriesName": ""
     }
   },
@@ -63,9 +63,6 @@
   },
   "dynamicBindingPathList": [
     {
-      "key": "chartData.kpu2ivut0s.data"
-    },
-    {
       "key": "borderRadius"
     },
     {
@@ -79,6 +76,9 @@
     },
     {
       "key": "customEChartConfig"
+    },
+    {
+      "key": "chartData.kpu2ivut0s.data"
     }
   ],
   "dynamicTriggerPathList": [],

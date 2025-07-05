@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  date_trunc('minute', scan_time) + INTERVAL '60 min' * FLOOR(EXTRACT(minute FROM scan_time) / 10) AS hour,\n  COUNT(DISTINCT device_id) AS online_devices\nFROM device_scan_log\nWHERE status = true\nGROUP BY hour\nORDER BY hour ASC\nLIMIT 12;\n",
+      "body": "SELECT \n  date_trunc('hour', scan_time) AS hour,\n  COUNT(DISTINCT device_id) AS online_devices\nFROM device_scan_log\nWHERE status = true\nGROUP BY hour\nORDER BY hour DESC\nLIMIT 12;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
