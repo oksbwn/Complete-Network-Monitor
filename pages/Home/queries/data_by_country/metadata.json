@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "data_by_country",
     "pageId": "Home",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
