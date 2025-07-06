@@ -1,5 +1,5 @@
 SELECT 
-  COALESCE(nd.name, nd.ip_address::text) AS device_name,
+  COALESCE(nd.display_name,nd.name, nd.ip_address::text) AS device_name,
   COUNT(*) AS connection_count,
   ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS percentage
 FROM network_session ns

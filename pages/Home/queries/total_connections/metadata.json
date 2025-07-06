@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  COALESCE(nd.name, nd.ip_address::text) AS device_name,\n  COUNT(*) AS connection_count,\n  ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS percentage\nFROM network_session ns\nJOIN network_device nd ON ns.device_id = nd.id\nGROUP BY device_name\nORDER BY percentage DESC;\n",
+      "body": "SELECT \n  COALESCE(nd.display_name,nd.name, nd.ip_address::text) AS device_name,\n  COUNT(*) AS connection_count,\n  ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS percentage\nFROM network_session ns\nJOIN network_device nd ON ns.device_id = nd.id\nGROUP BY device_name\nORDER BY percentage DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
