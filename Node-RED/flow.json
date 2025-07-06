@@ -1,5 +1,1143 @@
 [
     {
+        "id": "5143c870a6bb7dc2",
+        "type": "tab",
+        "label": "Network Monitor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "782ccc4afc7b816b",
+        "type": "group",
+        "z": "5143c870a6bb7dc2",
+        "name": "Ping and check devices",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "31fafbb7b57e8174",
+            "483c809233cc67e9",
+            "c109f1843cdfa177",
+            "26063dc10d0fe14c",
+            "246534e72d52951e",
+            "6bb5a33ff0f201ae",
+            "parse_mac",
+            "5e326a918c2192e0",
+            "3098498d54cc3ab6",
+            "6925c66df3fe8a3a",
+            "cfa039061075d593",
+            "520f1560bde5f3aa",
+            "2d4e240851bb540f",
+            "a7013340013145d1",
+            "d808645dc8566990",
+            "5fe4eae9b6d67e1e"
+        ],
+        "x": 274,
+        "y": 99,
+        "w": 1188.9630317687988,
+        "h": 242
+    },
+    {
+        "id": "0f89df98c7e939fc",
+        "type": "group",
+        "z": "5143c870a6bb7dc2",
+        "name": "Get Data from AdGuard Home",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9e351c5eaa52a3ce",
+            "c48643d828600e74",
+            "180d20bb9f330ae7",
+            "0a653829e15b4b22",
+            "a4b53b33df5a98e3",
+            "67ef233d61dcd1cc",
+            "db96a2b733f7a8ef",
+            "2d7dbab86b153c7a",
+            "d8ad26b8b597e02e"
+        ],
+        "x": 274,
+        "y": 377.9999990463257,
+        "w": 1192,
+        "h": 163.00000095367432
+    },
+    {
+        "id": "c2ca876e66f5471f",
+        "type": "group",
+        "z": "5143c870a6bb7dc2",
+        "name": "Get data from OpenWRT",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b417a13ef84d517a",
+            "b94dc91d0fe5f058",
+            "218be8845d466ae4",
+            "5c3d1049a4180592",
+            "62f27bd13a7b2b86",
+            "52c9a55b236cb3da",
+            "0ddf2495fc6f5ca7",
+            "db096bd3c9a44742",
+            "a9535b9d07513cb5",
+            "5273c80eeb89578e",
+            "b3182fe5257338d6",
+            "610c33e3371c2bad",
+            "43fb6ddd14c2f1f2",
+            "b4cd0deb77742341",
+            "f0a05fa6d2829c47",
+            "de61b713f2839ce8",
+            "43db0a0614ddf92b",
+            "a9b72278c308ca49"
+        ],
+        "x": 274,
+        "y": 559,
+        "w": 1192,
+        "h": 242
+    },
+    {
+        "id": "2744cc825043da97",
+        "type": "group",
+        "z": "5143c870a6bb7dc2",
+        "name": "Update vendor from MAC addresses",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ec2da767f12878b8",
+            "963ac5718e02951a",
+            "d3c2e2431eadf9f7",
+            "b55cef53b2290e6c",
+            "51823e6fe184f667",
+            "22a6d42abfefb1b3",
+            "bcd9e7a6b1409293",
+            "0dc77c0c5e33e0db"
+        ],
+        "x": 274,
+        "y": 819,
+        "w": 1192,
+        "h": 222
+    },
+    {
+        "id": "3df5d133ae50d7bc",
+        "type": "group",
+        "z": "5143c870a6bb7dc2",
+        "name": "Connections log from OpenWRT",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "cffda5d56a0cc4e6",
+            "b76057f76f748303",
+            "bddd3caecaea7887",
+            "9d0f56cf6e854c49",
+            "71e2c5ec5b0df94f",
+            "5988f12661d1b749",
+            "b8c41d79733aaedf",
+            "680e5bf84b333910",
+            "b9bf426c3f92dae9",
+            "2044329d49243a15",
+            "cf28930f6de38fd2",
+            "299fc5e63a3afc78",
+            "6ad1fc3fa5ef76eb",
+            "c8ae9759b433e343",
+            "2c181395690608cc",
+            "2ab6076375b4d87e",
+            "62bb724196d10ec4",
+            "319bccfcaad67bdf",
+            "0f0c44b433b3ce2b",
+            "d952832a57044477",
+            "69c1b29c1fdff58a",
+            "c1c26788f352134b",
+            "368b8808cf28efa0"
+        ],
+        "x": 274,
+        "y": 1059,
+        "w": 1192,
+        "h": 242
+    },
+    {
+        "id": "4ae074637b1ea491",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "192.168.0.7",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "nmonitor",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "postgres",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "8e88d759dd291daf",
+        "type": "ssh-conf",
+        "ssh": "",
+        "name": "192.168.0.1",
+        "userlabel": "192.168.0.1"
+    },
+    {
+        "id": "483c809233cc67e9",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Individual Subnets",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "c109f1843cdfa177"
+            ]
+        ]
+    },
+    {
+        "id": "c109f1843cdfa177",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Generate IPs",
+        "func": "const cidr = msg.payload.cidr;\n\nfunction cidrToIps(cidr) {\n    const [ip, bits] = cidr.split('/');\n    const base = ipToLong(ip);\n    const mask = ~(2 ** (32 - parseInt(bits)) - 1);\n    const network = base & mask;\n    const broadcast = network | ~mask >>> 0;\n\n    const ips = [];\n    for (let i = network + 1; i < broadcast; i++) {\n        ips.push({ ip: longToIp(i) });\n    }\n    return ips;\n}\n\nfunction ipToLong(ip) {\n    return ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;\n}\n\nfunction longToIp(long) {\n    return [24, 16, 8, 0].map(shift => (long >>> shift) & 255).join('.');\n}\n\nmsg.payload = cidrToIps(cidr);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 140,
+        "wires": [
+            [
+                "26063dc10d0fe14c"
+            ]
+        ]
+    },
+    {
+        "id": "26063dc10d0fe14c",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Individual IPs",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 950,
+        "y": 140,
+        "wires": [
+            [
+                "246534e72d52951e"
+            ]
+        ]
+    },
+    {
+        "id": "246534e72d52951e",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "IP",
+        "func": "msg = {\n    payload: msg.payload.ip\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 140,
+        "wires": [
+            [
+                "d808645dc8566990"
+            ]
+        ]
+    },
+    {
+        "id": "6bb5a33ff0f201ae",
+        "type": "enhanced-ping",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "",
+        "ipAddress": "192.168.0.1",
+        "timeout": 5000,
+        "interval": 0,
+        "count": 1,
+        "size": 32,
+        "retries": 0,
+        "x": 399.66679763793945,
+        "y": 199.22223949432373,
+        "wires": [
+            [
+                "5e326a918c2192e0"
+            ],
+            [
+                "5e326a918c2192e0"
+            ]
+        ]
+    },
+    {
+        "id": "parse_mac",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Parse MAC",
+        "func": "const out = msg.payload;\nconst match = out.match(/..:..:..:..:..:../);\nmsg.mac = match ? match[0] : null;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 962.0001258850098,
+        "y": 204.2222146987915,
+        "wires": [
+            [
+                "6925c66df3fe8a3a"
+            ]
+        ]
+    },
+    {
+        "id": "5e326a918c2192e0",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Process Ping",
+        "func": "msg = {\n    pinginfo : msg.payload, \n    payload : msg.payload.target\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 585.000171661377,
+        "y": 201.88887405395508,
+        "wires": [
+            [
+                "3098498d54cc3ab6"
+            ]
+        ]
+    },
+    {
+        "id": "3098498d54cc3ab6",
+        "type": "exec",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "command": "ip neigh show",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 771.0000953674316,
+        "y": 202.8888864517212,
+        "wires": [
+            [
+                "parse_mac"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6925c66df3fe8a3a",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Process Final Result",
+        "func": "const result = msg.pinginfo?.statistics?.results?.[0] || {};\n\nconst isAlive = result.alive === true;\nconst pingTime = isAlive && result.time !== \"unknown\" ? parseFloat(result.time) : null;\nconst macAddr = typeof msg.mac === \"string\" ? msg.mac.toLowerCase() : null;\n\nmsg = {\n    payload : {\n        ip: msg.ip || result.host || null,\n        alive: isAlive,\n        rtt: pingTime, // ping time in ms or null\n        mac: macAddr,\n        timestamp: msg.timestamp || result.timestamp || new Date().toISOString()\n}};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1165.5557327270508,
+        "y": 205.1111364364624,
+        "wires": [
+            [
+                "cfa039061075d593"
+            ]
+        ]
+    },
+    {
+        "id": "cfa039061075d593",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "SQL Queries",
+        "func": "const { ip, mac: rawMac, rtt, alive } = msg.payload;\n\nif (!rawMac) \n  return null;\n\nconst mac   = rawMac.toLowerCase();\n\nconst aliveLit = alive ? 'true' : 'false';\nconst rttLit   = (rtt !== null && rtt !== undefined) ? rtt : 'NULL';\n\nmsg.payload = [`\n      INSERT INTO network_device (\n        mac_address,\n        ip_address,\n        comment)\n      VALUES (\n        '${mac}',\n        '${ip}',\n        'auto discovered')\n      ON CONFLICT (mac_address) DO NOTHING;`.trim(),\n      \n      `INSERT INTO device_scan_log (\n        device_id,\n        status,\n        rtt_ms,\n        mac_address,\n        ip_address)\n      SELECT\n        id,\n        ${aliveLit},\n        ${rttLit},\n        '${mac}',\n        '${ip}'\n      FROM network_device\n      WHERE mac_address = '${mac}';`.trim()\n    ];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1366.9630317687988,
+        "y": 204.51856327056885,
+        "wires": [
+            [
+                "2d4e240851bb540f"
+            ]
+        ]
+    },
+    {
+        "id": "2d4e240851bb540f",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Individual IPs",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 390.0000457763672,
+        "y": 257.8889150619507,
+        "wires": [
+            [
+                "a7013340013145d1"
+            ]
+        ]
+    },
+    {
+        "id": "a7013340013145d1",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Massage",
+        "func": "msg = {\n    query: msg.payload\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580.0000648498535,
+        "y": 258.88891410827637,
+        "wires": [
+            [
+                "520f1560bde5f3aa",
+                "5fe4eae9b6d67e1e"
+            ]
+        ]
+    },
+    {
+        "id": "d808645dc8566990",
+        "type": "delay",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "400",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1270,
+        "y": 140,
+        "wires": [
+            [
+                "6bb5a33ff0f201ae"
+            ]
+        ]
+    },
+    {
+        "id": "9e351c5eaa52a3ce",
+        "type": "http request",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 420,
+        "wires": [
+            [
+                "2d7dbab86b153c7a"
+            ]
+        ]
+    },
+    {
+        "id": "c48643d828600e74",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "180d20bb9f330ae7",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Adguard URL",
+        "func": "msg.url = `http://192.168.0.11:3000/control/querylog?search=&response_status=all&older_than=&limit=10000`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 387.99996185302734,
+        "y": 418.9999990463257,
+        "wires": [
+            [
+                "9e351c5eaa52a3ce"
+            ]
+        ]
+    },
+    {
+        "id": "0a653829e15b4b22",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Parse",
+        "func": "const logs = msg.payload;\nconst clientIp = msg.ip;\n\nif (!clientIp || logs.length === 0) {\n    node.warn(\"No data to process.\");\n    return null;\n}\n\n// Summarize\nconst domains = new Set();\nlet totalQueries = 0;\nlet blockedQueries = 0;\nlet totalLatency = 0;\n\n// Extract domain and latency\nlogs.forEach(entry => {\n    totalQueries++;\n    domains.add(entry.question.name);\n\n    const latency = parseFloat(entry.elapsedMs);\n    if (!isNaN(latency)) {\n        totalLatency += latency;\n    }\n\n    // If you use filtering rules:\n    if (entry.reason && !entry.reason.includes(\"NotFilteredNotFound\")) {\n        blockedQueries++;\n    }\n});\n\nconst summary = {\n    device_ip: clientIp,\n    domains: Array.from(domains),\n    total_queries: totalQueries,\n    blocked_queries: blockedQueries,\n    avg_latency_ms: +(totalLatency / totalQueries).toFixed(2),\n    timestamp: new Date().toISOString()\n};\n\n\nreturn {\n    payload: summary\n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 420,
+        "wires": [
+            [
+                "67ef233d61dcd1cc"
+            ]
+        ]
+    },
+    {
+        "id": "a4b53b33df5a98e3",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Individual IPs",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "ip",
+        "property": "payload",
+        "x": 1170,
+        "y": 420,
+        "wires": [
+            [
+                "0a653829e15b4b22"
+            ]
+        ]
+    },
+    {
+        "id": "67ef233d61dcd1cc",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Query",
+        "func": "const ip_address = msg.payload.device_ip;\nconst domains = msg.payload.domains.map(d => `'${d}'`).join(', ');\nconst total_queries = msg.payload.total_queries;\nconst blocked_queries = msg.payload.blocked_queries;\nconst average_latency = msg.payload.avg_latency_ms;\nconst timestamp = `'${msg.payload.timestamp}'`;\n\nmsg = {\n    query: `\n        INSERT INTO dns_query_summary (\n            device_id,\n            domains,\n            total_queries,\n            blocked_queries,\n            avg_latency_ms,\n            timestamp\n        )\n        SELECT \n            id,\n            ARRAY[${domains}],\n            ${total_queries},\n            ${blocked_queries},\n            ${average_latency},\n            ${timestamp}\n        FROM network_device\n        WHERE ip_address = '${ip_address}';\n    `\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 460,
+        "wires": [
+            [
+                "c48643d828600e74",
+                "db96a2b733f7a8ef"
+            ]
+        ]
+    },
+    {
+        "id": "b417a13ef84d517a",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Shell Command",
+        "func": "msg.payload = 'echo \"===NLBW===\"; nlbw -c show; echo \"===LEASES===\"; cat /tmp/dhcp.leases';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "218be8845d466ae4"
+            ]
+        ]
+    },
+    {
+        "id": "b94dc91d0fe5f058",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Data usage Parser",
+        "func": "function parseNlbwToJson(raw) {\n    const output = [];\n    const lines = raw.split(/\\r?\\n/);\n\n    const regex = /^\\s*,?\\s*(IPv4|IPv6)\\s+(\\d+\\.\\d+\\.\\d+\\.\\d+)\\s+\\(([\\da-f:]+)\\)\\s+(\\w+)\\s+([\\d.,]+\\s*[KMG]?)\\s+([\\d.,]+\\s*[KMG]?B)\\s+\\(\\s*([\\d.,]+\\s*[KMG]?)\\s*\\)\\s+([\\d.,]+\\s*[KMG]?B)\\s+\\(\\s*([\\d.,]+\\s*[KMG]?)\\s*\\)/i;\n\n    for (const line of lines) {\n        if (!line.trim() || line.startsWith('=') || line.includes('Fam')) continue;\n\n        const match = line.match(regex);\n        if (!match) continue;\n\n        const [\n            , family, ip, mac, protocol,\n            connections,\n            downloadBytes, downloadPkts,\n            uploadBytes, uploadPkts\n        ] = match;\n\n        output.push({\n            ip,\n            mac,\n            protocol,\n            connections: parseInt(normalizeNumber(connections)),\n            download: {\n                bytes: convertToBytes(downloadBytes),\n                packets: convertToPackets(downloadPkts)\n            },\n            upload: {\n                bytes: convertToBytes(uploadBytes),\n                packets: convertToPackets(uploadPkts)\n            }\n        });\n    }\n\n    return output;\n}\n\n// --- Helper functions ---\n\nfunction normalizeNumber(val) {\n    return val.trim().replace(/,/g, '').replace(/\\s+/g, '');\n}\n\nfunction convertToPackets(str) {\n    const match = normalizeNumber(str).match(/([\\d.]+)([KMG]?)/i);\n    if (!match) return 0;\n    const num = parseFloat(match[1]);\n    const unit = match[2].toUpperCase();\n    const scale = { '': 1, K: 1e3, M: 1e6, G: 1e9 };\n    return Math.round(num * (scale[unit] || 1));\n}\n\nfunction convertToBytes(str) {\n    const match = normalizeNumber(str).match(/([\\d.]+)([KMG]?B)/i);\n    if (!match) return 0;\n    const num = parseFloat(match[1]);\n    const unit = match[2].toUpperCase();\n    const scale = { B: 1, KB: 1e3, MB: 1e6, GB: 1e9 };\n    return Math.round(num * (scale[unit] || 1));\n}\n\nreturn {\n    data: parseNlbwToJson(msg.payload)\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 660,
+        "wires": [
+            [
+                "610c33e3371c2bad"
+            ]
+        ]
+    },
+    {
+        "id": "218be8845d466ae4",
+        "type": "ssh-v3",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "",
+        "conf": "8e88d759dd291daf",
+        "debug": false,
+        "x": 550,
+        "y": 600,
+        "wires": [
+            [
+                "5c3d1049a4180592"
+            ]
+        ]
+    },
+    {
+        "id": "5c3d1049a4180592",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Split Response",
+        "func": "let completePayload = '' + msg.session.stdout;\n\nlet splitData = completePayload.split(\"===LEASES===\\n\", 2);\nlet nlbw_data = splitData[0];\nlet leases_data = splitData[1] || '';\n\nreturn [{ payload: leases_data }, { payload: nlbw_data }];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 660,
+        "wires": [
+            [
+                "db096bd3c9a44742"
+            ],
+            [
+                "b94dc91d0fe5f058"
+            ]
+        ]
+    },
+    {
+        "id": "62f27bd13a7b2b86",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Individual Data",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1180,
+        "y": 660,
+        "wires": [
+            [
+                "b3182fe5257338d6"
+            ]
+        ]
+    },
+    {
+        "id": "31fafbb7b57e8174",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Get Subnets",
+        "query": "SELECT * FROM scan_subnet;",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "483c809233cc67e9"
+            ]
+        ]
+    },
+    {
+        "id": "520f1560bde5f3aa",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 766.0002098083496,
+        "y": 258.888897895813,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db96a2b733f7a8ef",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 570,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52c9a55b236cb3da",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1370,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fe4eae9b6d67e1e",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "782ccc4afc7b816b",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2acfa9974a8468f0",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "name": "Scan Trigger",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "31fafbb7b57e8174",
+                "180d20bb9f330ae7",
+                "b417a13ef84d517a",
+                "b76057f76f748303"
+            ]
+        ]
+    },
+    {
+        "id": "b13bda941d42d3a0",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 520,
+        "wires": [
+            [
+                "180d20bb9f330ae7"
+            ]
+        ]
+    },
+    {
+        "id": "2d7dbab86b153c7a",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Last 10 Min Queries",
+        "func": "const now = Date.now();\nconst windowEnd = new Date(now);\nconst windowStart = new Date(now - 10 * 60 * 1000);\n\n\nmsg.payload = msg.payload.data.filter((d) => {\n    let entryTime = new Date(d.time);\n    return entryTime >= windowStart && entryTime <= windowEnd;\n});\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 420,
+        "wires": [
+            [
+                "d8ad26b8b597e02e"
+            ]
+        ]
+    },
+    {
+        "id": "d8ad26b8b597e02e",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "0f89df98c7e939fc",
+        "name": "Group",
+        "func": "let output = {};\nmsg.payload.map( d => {\n    if (!output[d.client]){\n        output[d.client] = [d];\n    }else{\n        output[d.client].push(d);\n    }\n\n});\n\nreturn {\n    payload: output\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 420,
+        "wires": [
+            [
+                "a4b53b33df5a98e3"
+            ]
+        ]
+    },
+    {
+        "id": "1a1f1c3a71f1b7ab",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "b417a13ef84d517a"
+            ]
+        ]
+    },
+    {
+        "id": "0ddf2495fc6f5ca7",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "db096bd3c9a44742",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Parse DHCP Lease",
+        "func": "let leases = msg.payload.trim().split(\"\\n\");\n\nlet parsed = leases.map(line => {\n    let parts = line.trim().split(/\\s+/);\n    return {\n        lease_time: parseInt(parts[0]),\n        mac: parts[1],\n        ip: parts[2],\n        hostname: parts[3] !== \"*\" ? parts[3] : null,\n        client_id: parts[4] !== \"*\" ? parts[4] : null\n    };\n});\n\n// Output the structured array\nmsg.payload = parsed;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 600,
+        "wires": [
+            [
+                "a9535b9d07513cb5"
+            ]
+        ]
+    },
+    {
+        "id": "a9535b9d07513cb5",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Individual IPs",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "ip",
+        "property": "payload",
+        "x": 970,
+        "y": 600,
+        "wires": [
+            [
+                "5273c80eeb89578e"
+            ]
+        ]
+    },
+    {
+        "id": "5273c80eeb89578e",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Gen SQL",
+        "func": "let d = msg.payload;\nlet hostname = d.hostname ? `'${d.hostname.replace(/'/g, \"''\")}'` : `NULL`;\n\nmsg = {\n    query: `\n        INSERT INTO network_device (\n            mac_address,\n            ip_address,\n            hostname,\n            comment\n        )\n        VALUES (\n            '${d.mac}',\n            '${d.ip}',\n            ${hostname},\n            'Updated using OpenWRT'\n        )\n        ON CONFLICT (mac_address)\n        DO UPDATE SET\n            ip_address = EXCLUDED.ip_address,\n            hostname =   ${hostname},\n\t\t\tcomment = 'Updated using OpenWRT'\n        RETURNING *;\n    `\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 600,
+        "wires": [
+            [
+                "52c9a55b236cb3da"
+            ]
+        ]
+    },
+    {
+        "id": "b3182fe5257338d6",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Query",
+        "func": "const d = msg.payload;\n\n// Escaping to prevent SQL injection\nconst escape_ = s => String(s).replace(/'/g, \"''\");\n\nmsg = {\n    query: `\nINSERT INTO network_usage (\n    device_id, app_protocol, timestamp,\n    download_bytes, download_packets,\n    upload_bytes, upload_packets\n)\nSELECT\n    nd.id,\n    '${escape_(d.protocol)}',\n    '${new Date().toISOString()}',\n    ${d.download.bytes},\n    ${d.download.packets},\n    ${d.upload.bytes},\n    ${d.upload.packets}\nFROM network_device nd\nWHERE nd.ip_address = '${escape_(d.ip)}';\n`\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 660,
+        "wires": [
+            [
+                "52c9a55b236cb3da"
+            ]
+        ]
+    },
+    {
+        "id": "72973403d35abaef",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "name": "Every 12H",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "43200",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "ec2da767f12878b8"
+            ]
+        ]
+    },
+    {
+        "id": "ec2da767f12878b8",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "",
+        "query": "SELECT * FROM network_device;",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 860,
+        "wires": [
+            [
+                "963ac5718e02951a"
+            ]
+        ]
+    },
+    {
+        "id": "963ac5718e02951a",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "Individual IPs",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "ip",
+        "property": "payload",
+        "x": 570,
+        "y": 860,
+        "wires": [
+            [
+                "22a6d42abfefb1b3"
+            ]
+        ]
+    },
+    {
+        "id": "d3c2e2431eadf9f7",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "b55cef53b2290e6c",
+        "type": "http request",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1370,
+        "y": 860,
+        "wires": [
+            [
+                "bcd9e7a6b1409293"
+            ]
+        ]
+    },
+    {
+        "id": "51823e6fe184f667",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "MAC Query URL",
+        "func": "\nreturn {\n    mac: msg.payload.mac_address,\n    url: 'https://macvendors.com/query/' + msg.payload.mac_address\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 860,
+        "wires": [
+            [
+                "b55cef53b2290e6c"
+            ]
+        ]
+    },
+    {
         "id": "22a6d42abfefb1b3",
         "type": "delay",
         "z": "5143c870a6bb7dc2",
@@ -18,10 +1156,727 @@
         "allowrate": false,
         "outputs": 1,
         "x": 800,
-        "y": 800,
+        "y": 860,
         "wires": [
             [
                 "51823e6fe184f667"
+            ]
+        ]
+    },
+    {
+        "id": "bcd9e7a6b1409293",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "Parser",
+        "func": "const response = (msg.payload || '').toLowerCase().trim();\nlet vendor = '';\nif (response.includes('<html')) {\n    vendor = 'NA (Rate limited or HTML error)';\n} else if (response === 'not found') {\n    vendor = 'NA (Not found)';\n} else if (response === '') {\n    vendor = 'NA (Empty response)';\n} else{\n    vendor = msg.payload;\n}\n\nmsg.query = `UPDATE network_device\nSET vendor = '${vendor}'\nWHERE mac_address::text = '${msg.mac}';`\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "0dc77c0c5e33e0db",
+                "d3c2e2431eadf9f7"
+            ]
+        ]
+    },
+    {
+        "id": "0dc77c0c5e33e0db",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "2744cc825043da97",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 650,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e2c35fa4e3ed873",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1060,
+        "wires": [
+            [
+                "b76057f76f748303"
+            ]
+        ]
+    },
+    {
+        "id": "cffda5d56a0cc4e6",
+        "type": "ssh-v3",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "",
+        "conf": "8e88d759dd291daf",
+        "debug": false,
+        "x": 550,
+        "y": 1100,
+        "wires": [
+            [
+                "9d0f56cf6e854c49"
+            ]
+        ]
+    },
+    {
+        "id": "b76057f76f748303",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Shell Command",
+        "func": "msg.payload = 'cat /proc/net/nf_conntrack | grep \\'src=192.168\\'';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1100,
+        "wires": [
+            [
+                "cffda5d56a0cc4e6"
+            ]
+        ]
+    },
+    {
+        "id": "bddd3caecaea7887",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "9d0f56cf6e854c49",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Parser",
+        "func": "const lines = msg.session.stdout.join('').split('\\n');\nconst timestamp = new Date().toISOString();\nconst results = [];\n\nfor (const line of lines) {\n    if (!line.includes('src=192.168')) continue;\n\n    const srcMatch = line.match(/src=([0-9.]+)/);\n    const dstMatch = line.match(/dst=([0-9.]+)/);\n    const sportMatch = line.match(/sport=(\\d+)/);\n    const dportMatch = line.match(/dport=(\\d+)/);\n    const protoMatch = line.match(/\\s(tcp|udp|icmp)\\s/);\n    const stateMatch = line.match(/\\s(ESTABLISHED|TIME_WAIT|CLOSE_WAIT|SYN_SENT|SYN_RECV|FIN_WAIT1|FIN_WAIT2|LAST_ACK|CLOSED|LISTEN)\\s/);\n    const bytesSentMatch = line.match(/bytes=(\\d+)/); // First occurrence is client→server\n    const bytesReceivedMatch = [...line.matchAll(/bytes=(\\d+)/g)][1]; // Second occurrence = server→client\n    const natDstMatch = line.match(/dport=\\d+.*?src=([0-9.]+)/); // NAT'd destination IP\n    const assured = line.includes('[ASSURED]');\n    const timeoutMatch = line.match(/\\s(\\d+)\\s(ESTABLISHED|CLOSE|.*)\\s/); // First number = timeout in seconds\n\n    if (srcMatch && dstMatch) {\n        results.push({\n            timestamp,\n            protocol: protoMatch ? protoMatch[1] : null,\n            state: stateMatch ? stateMatch[1] : null,\n            src_ip: srcMatch[1],\n            src_port: sportMatch ? parseInt(sportMatch[1]) : null,\n            dst_ip: dstMatch[1],\n            dst_port: dportMatch ? parseInt(dportMatch[1]) : null,\n            nat_translated_ip: natDstMatch ? natDstMatch[1] : null,\n            bytes_sent: bytesSentMatch ? parseInt(bytesSentMatch[1]) : null,\n            bytes_received: bytesReceivedMatch ? parseInt(bytesReceivedMatch[1]) : null,\n            timeout_sec: timeoutMatch ? parseInt(timeoutMatch[1]) : null,\n            assured: assured\n        });\n    }\n}\n\nreturn {\n    payload : results\n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1100,
+        "wires": [
+            [
+                "71e2c5ec5b0df94f"
+            ]
+        ]
+    },
+    {
+        "id": "71e2c5ec5b0df94f",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Individual Conn.",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "ip",
+        "property": "payload",
+        "x": 860,
+        "y": 1100,
+        "wires": [
+            [
+                "5988f12661d1b749",
+                "299fc5e63a3afc78"
+            ]
+        ]
+    },
+    {
+        "id": "5988f12661d1b749",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "SQL",
+        "func": "const f = msg.payload;\nconst now = new Date().toISOString();\n\nfunction sqlSafe(str) {\n  return str?.replace(/'/g, \"''\");\n}\n\nconst valueRow = `\n  (\n    '${sqlSafe(f.protocol)}',\n    '${sqlSafe(f.src_ip)}', ${f.src_port},\n    '${sqlSafe(f.dst_ip)}', ${f.dst_port},\n    (SELECT id FROM network_device WHERE ip_address='${sqlSafe(f.src_ip)}' LIMIT 1),\n    '${f.timestamp}',\n    ${f.bytes_sent},\n    ${f.bytes_received},\n    ${f.assured ? 'TRUE' : 'FALSE'},\n    '${now}'\n  )\n`;\n\nmsg.topic = `\n  WITH upsert AS (\n    INSERT INTO network_session (\n      protocol, src_ip, src_port, dst_ip, dst_port,\n      device_id, start_time, bytes_sent, bytes_received,\n      assured, last_refresh\n    )\n    VALUES ${valueRow}\n    ON CONFLICT (protocol, src_ip, dst_ip, src_port, dst_port)\n    WHERE end_time IS NULL\n    DO UPDATE SET\n      bytes_sent     = network_session.bytes_sent + EXCLUDED.bytes_sent,\n      bytes_received = network_session.bytes_received + EXCLUDED.bytes_received,\n      last_refresh   = '${now}',\n      assured        = EXCLUDED.assured\n    RETURNING id\n  )\n  SELECT id FROM upsert;\n`;\n\nreturn {\n  query: msg.topic\n};  // ✅ This line must not append anything to msg.topic\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1100,
+        "wires": [
+            [
+                "b8c41d79733aaedf"
+            ]
+        ]
+    },
+    {
+        "id": "b8c41d79733aaedf",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Query",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1190,
+        "y": 1100,
+        "wires": [
+            [
+                "b9bf426c3f92dae9"
+            ]
+        ]
+    },
+    {
+        "id": "680e5bf84b333910",
+        "type": "join",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1030,
+        "y": 1160,
+        "wires": [
+            [
+                "2044329d49243a15"
+            ]
+        ]
+    },
+    {
+        "id": "b9bf426c3f92dae9",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Parse",
+        "func": "\nreturn {\n    payload: msg.payload[0].id\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 1100,
+        "wires": [
+            [
+                "680e5bf84b333910"
+            ]
+        ]
+    },
+    {
+        "id": "2044329d49243a15",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "SQL",
+        "func": "\nconst ids = msg.payload\nconst sql = `UPDATE network_session\n             SET end_time = CURRENT_TIMESTAMP\n             WHERE end_time IS NULL\n               AND id NOT IN (${ids.join(',')});`;\n\nreturn {\n    query: sql\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 1160,
+        "wires": [
+            [
+                "cf28930f6de38fd2"
+            ]
+        ]
+    },
+    {
+        "id": "cf28930f6de38fd2",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1350,
+        "y": 1160,
+        "wires": [
+            [
+                "bddd3caecaea7887"
+            ]
+        ]
+    },
+    {
+        "id": "299fc5e63a3afc78",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "function 1",
+        "func": "const ip = msg.payload.dst_ip;\nconst query = `\n  SELECT '${ip}'::inet AS ip\n  WHERE NOT ('${ip}'::inet << '192.168.0.0/24'::inet)\n    AND NOT EXISTS (\n      SELECT 1 FROM ip_geo_cache WHERE ip = '${ip}'::inet\n    );\n`;\n\n\nreturn {\n    query \n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1160,
+        "wires": [
+            [
+                "c8ae9759b433e343"
+            ]
+        ]
+    },
+    {
+        "id": "6ad1fc3fa5ef76eb",
+        "type": "debug",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "c8ae9759b433e343",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Query",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 530,
+        "y": 1160,
+        "wires": [
+            [
+                "2ab6076375b4d87e"
+            ]
+        ]
+    },
+    {
+        "id": "2c181395690608cc",
+        "type": "join",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 850,
+        "y": 1160,
+        "wires": [
+            [
+                "319bccfcaad67bdf"
+            ]
+        ]
+    },
+    {
+        "id": "2ab6076375b4d87e",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Parse",
+        "func": "return msg.payload.length > 0 ? {\n    payload: msg.payload[0].ip\n} : null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1160,
+        "wires": [
+            [
+                "2c181395690608cc"
+            ]
+        ]
+    },
+    {
+        "id": "62bb724196d10ec4",
+        "type": "http request",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/batch",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 1260,
+        "wires": [
+            [
+                "0f0c44b433b3ce2b"
+            ]
+        ]
+    },
+    {
+        "id": "319bccfcaad67bdf",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Batch",
+        "func": "var allIps = msg.payload;\n// Remove duplicates\nallIps = [...new Set(allIps)];\n\nconst batchSize = 20;\nlet batches = [];\n\nfor (let i = 0; i < allIps.length; i += batchSize) {\n    batches.push(allIps.slice(i, i + batchSize));\n}\n\n// Pass batches forward as array\nmsg.payload = batches;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1220,
+        "wires": [
+            [
+                "d952832a57044477"
+            ]
+        ]
+    },
+    {
+        "id": "0f0c44b433b3ce2b",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "SQL",
+        "func": "// msg.payload should be an array of ip-api.com responses\nconst rows = msg.payload;\n\n// Helper to escape single quotes for SQL\nconst esc = (s) => String(s ?? '').replace(/'/g, \"''\");\n\nif (!Array.isArray(rows) || rows.length === 0) {\n    node.warn('Empty or invalid IP data');\n    return null;\n}\n\n// Build SQL VALUES\nconst values = rows\n    .filter(r => r.status === 'success' && r.query)\n    .map(r => `(\n        '${esc(r.query)}'::inet,\n        '${esc(r.country)}',\n        '${esc(r.regionName)}',\n        '${esc(r.city)}',\n        ${r.lat ?? 'NULL'},\n        ${r.lon ?? 'NULL'},\n        '${esc(r.org || r.isp)}',\n        CURRENT_TIMESTAMP\n    )`).join(',\\n');\n\nif (!values) {\n    node.warn('No valid IP entries to insert');\n    return null;\n}\n\n// Final SQL\nmsg.topic = `\n    INSERT INTO ip_geo_cache\n        (ip, country, region, city, lat, lon, org, last_lookup)\n    VALUES\n    ${values}\n    ON CONFLICT (ip) DO UPDATE\n      SET last_lookup = EXCLUDED.last_lookup;\n`;\n\nreturn {\n    query: msg.topic\n};\n ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1260,
+        "wires": [
+            [
+                "368b8808cf28efa0"
+            ]
+        ]
+    },
+    {
+        "id": "d952832a57044477",
+        "type": "split",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Individual Conn.",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "ip",
+        "property": "payload",
+        "x": 540,
+        "y": 1220,
+        "wires": [
+            [
+                "69c1b29c1fdff58a"
+            ]
+        ]
+    },
+    {
+        "id": "69c1b29c1fdff58a",
+        "type": "delay",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "30",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 1220,
+        "wires": [
+            [
+                "c1c26788f352134b"
+            ]
+        ]
+    },
+    {
+        "id": "c1c26788f352134b",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Payload",
+        "func": "\nreturn  {\n    payload: JSON.stringify(msg.payload)\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1220,
+        "wires": [
+            [
+                "62bb724196d10ec4"
+            ]
+        ]
+    },
+    {
+        "id": "368b8808cf28efa0",
+        "type": "postgresql",
+        "z": "5143c870a6bb7dc2",
+        "g": "3df5d133ae50d7bc",
+        "name": "Add to SQL",
+        "query": "",
+        "postgreSQLConfig": "4ae074637b1ea491",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 770,
+        "y": 1260,
+        "wires": [
+            [
+                "6ad1fc3fa5ef76eb"
+            ]
+        ]
+    },
+    {
+        "id": "f0a05fa6d2829c47",
+        "type": "file",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Update Cache",
+        "filename": "/data/assets/nlbw_cache.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 840,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43db0a0614ddf92b",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 450,
+        "y": 760,
+        "wires": [
+            [
+                "b4cd0deb77742341"
+            ]
+        ]
+    },
+    {
+        "id": "b4cd0deb77742341",
+        "type": "file in",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "",
+        "filename": "/data/assets/nlbw_cache.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 760,
+        "wires": [
+            [
+                "a9b72278c308ca49"
+            ]
+        ]
+    },
+    {
+        "id": "de61b713f2839ce8",
+        "type": "inject",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Create Cache",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 650,
+        "y": 700,
+        "wires": [
+            [
+                "f0a05fa6d2829c47"
+            ]
+        ]
+    },
+    {
+        "id": "610c33e3371c2bad",
+        "type": "file in",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Read Cache",
+        "filename": "/data/assets/nlbw_cache.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 830,
+        "y": 660,
+        "wires": [
+            [
+                "43fb6ddd14c2f1f2"
+            ]
+        ]
+    },
+    {
+        "id": "43fb6ddd14c2f1f2",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Converter",
+        "func": "let cache = [];\ntry {\n    cache = JSON.parse(msg.payload);\n} catch (e) { }\n\nconst currentList = msg.data || [];\nconst previousMap = new Map(cache.map(e => [`${e.ip}_${e.protocol}`, e]));\n\n// Update cache with current values (overwrite or insert)\nfor (const curr of currentList) {\n    const key = `${curr.ip}_${curr.protocol}`;\n    previousMap.set(key, curr);\n}\n\n// Convert updated map back to array\nconst updatedCache = Array.from(previousMap.values());\n\n// Calculate deltas\nconst deltas = [];\nfor (const curr of currentList) {\n    const key = `${curr.ip}_${curr.protocol}`;\n    const prev = cache.find(e => `${e.ip}_${e.protocol}` === key);\n\n    if (prev) {\n        const deltaUploadBytes = curr.upload.bytes - prev.upload.bytes;\n        const deltaUploadPackets = curr.upload.packets - prev.upload.packets;\n        const deltaDownloadBytes = curr.download.bytes - prev.download.bytes;\n        const deltaDownloadPackets = curr.download.packets - prev.download.packets;\n\n        // Skip if reset occurred (negative deltas)\n        if (\n            deltaUploadBytes < 0 ||\n            deltaUploadPackets < 0 ||\n            deltaDownloadBytes < 0 ||\n            deltaDownloadPackets < 0\n        ) {\n            continue; // Detected a reset — skip this delta\n        }\n\n        const delta = {\n            ip: curr.ip,\n            protocol: curr.protocol,\n            upload: {\n                bytes: deltaUploadBytes,\n                packets: deltaUploadPackets\n            },\n            download: {\n                bytes: deltaDownloadBytes,\n                packets: deltaDownloadPackets\n            }\n        };\n\n        if (\n            delta.upload.bytes > 0 ||\n            delta.upload.packets > 0 ||\n            delta.download.bytes > 0 ||\n            delta.download.packets > 0\n        ) {\n            deltas.push(delta);\n        }\n    }\n}\n\nreturn [\n    { payload: deltas },          // Output 1: traffic delta (for DB, MQTT, etc.)\n    { payload: updatedCache }     // Output 2: new cache to write back to file\n];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 660,
+        "wires": [
+            [
+                "62f27bd13a7b2b86"
+            ],
+            [
+                "f0a05fa6d2829c47"
+            ]
+        ]
+    },
+    {
+        "id": "a9b72278c308ca49",
+        "type": "function",
+        "z": "5143c870a6bb7dc2",
+        "g": "c2ca876e66f5471f",
+        "name": "Converter",
+        "func": "let cache = [];\ntry {\n    cache = JSON.parse(msg.payload);\n} catch (e) { }\nreturn {\n    payload: cache\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 760,
+        "wires": [
+            [
+                "0ddf2495fc6f5ca7"
             ]
         ]
     }
