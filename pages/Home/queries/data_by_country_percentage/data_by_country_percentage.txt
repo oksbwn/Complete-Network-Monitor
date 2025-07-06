@@ -1,0 +1,14 @@
+SELECT
+  igc.country,
+  SUM(ns.bytes_sent + ns.bytes_received) AS total_bytes,
+  ROUND(
+    100.0 * SUM(ns.bytes_sent + ns.bytes_received) / 
+    SUM(SUM(ns.bytes_sent + ns.bytes_received)) OVER (), 
+    2
+  ) AS percentage
+FROM network_session ns
+JOIN ip_geo_cache igc
+  ON ns.dst_ip = igc.ip
+WHERE NOT (ns.dst_ip::inet << '192.168.0.0/16'::inet)
+GROUP BY igc.country
+ORDER BY total_bytes DESC;

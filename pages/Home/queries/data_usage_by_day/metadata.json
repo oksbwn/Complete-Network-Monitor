@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  timestamp::date AS day,\n  ROUND(SUM(download_bytes) / 1048576.0, 2) AS total_download_mb,\n  ROUND(SUM(upload_bytes) / 1048576.0, 2) AS total_upload_mb,\n  ROUND(SUM(download_bytes + upload_bytes) / 1048576.0, 2) AS total_mb\nFROM\n  network_usage\nWHERE\n  timestamp >= CURRENT_DATE - INTERVAL '30 days'\nGROUP BY\n  day\nORDER BY\n  day;\n",
+      "body": "SELECT\n  timestamp::date AS day,\n  ROUND(SUM(download_bytes) /  1073741824.0 , 2) AS total_download_mb,\n  ROUND(SUM(upload_bytes) /  1073741824.0 , 2) AS total_upload_mb,\n  ROUND(SUM(download_bytes + upload_bytes) /  1073741824.0 , 2) AS total_mb\nFROM\n  network_usage\nWHERE\n  timestamp >= CURRENT_DATE - INTERVAL '30 days'\nGROUP BY\n  day\nORDER BY\n  day;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

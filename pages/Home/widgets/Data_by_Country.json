@@ -3,15 +3,15 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
+  "bottomRow": 272,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "5ph1awcbs4": {
-      "data": "{{total_connections.data.map(d => ({\n  x: d.device_name,\n  y: d.percentage\n}))}}",
+      "data": "{{data_by_country_percentage.data.map(d => ({\n  x: d.country,\n  y: d.percentage\n}))}}",
       "seriesName": ""
     }
   },
-  "chartName": "CONNECTIONS",
+  "chartName": "DATA BY COUNTRY",
   "chartType": "PIE_CHART",
   "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
   "customFusionChartConfig": {
@@ -88,7 +88,7 @@
   "isVisible": true,
   "key": "gjbn1phw58",
   "labelOrientation": "auto",
-  "leftColumn": 50,
+  "leftColumn": 0,
   "minWidth": 450,
   "mobileBottomRow": 107,
   "mobileLeftColumn": 0,
@@ -99,13 +99,13 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 32,
   "showDataPointLabel": true,
-  "topRow": 0,
+  "topRow": 234,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "51vwyz456j",
-  "widgetName": "MostConnections",
+  "widgetId": "zu4hdqik6q",
+  "widgetName": "Data_by_Country",
   "xAxisName": "Product Line",
   "yAxisName": "Revenue($)"
 }

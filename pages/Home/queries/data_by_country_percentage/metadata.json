@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "685fa65935da3262ccd9bcfb_5998581c-2dd9-468b-b44e-e5c7c32460d3",
-  "id": "Home_total_connections",
+  "gitSyncId": "6868f6c1e109052b74dd2f2d_05d8aa4c-20e6-4809-a204-4226f8165df2",
+  "id": "Home_data_by_country_percentage",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  COALESCE(nd.name, nd.ip_address::text) AS device_name,\n  COUNT(*) AS connection_count,\n  ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS percentage\nFROM network_session ns\nJOIN network_device nd ON ns.device_id = nd.id\nGROUP BY device_name\nORDER BY percentage DESC;\n",
+      "body": "SELECT\n  igc.country,\n  SUM(ns.bytes_sent + ns.bytes_received) AS total_bytes,\n  ROUND(\n    100.0 * SUM(ns.bytes_sent + ns.bytes_received) / \n    SUM(SUM(ns.bytes_sent + ns.bytes_received)) OVER (), \n    2\n  ) AS percentage\nFROM network_session ns\nJOIN ip_geo_cache igc\n  ON ns.dst_ip = igc.ip\nWHERE NOT (ns.dst_ip::inet << '192.168.0.0/16'::inet)\nGROUP BY igc.country\nORDER BY total_bytes DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,7 +23,7 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "total_connections",
+    "name": "data_by_country_percentage",
     "pageId": "Home",
     "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false

@@ -1,0 +1,11 @@
+SELECT
+  igc.lat,
+  igc.lon,
+  SUM(ns.bytes_sent + ns.bytes_received) AS value,
+  igc.country
+FROM network_session ns
+JOIN ip_geo_cache igc ON ns.dst_ip = igc.ip
+WHERE NOT (ns.dst_ip::inet << '192.168.0.0/16')
+  AND NOT (ns.dst_ip::inet << '10.0.0.0/8')
+  AND NOT (ns.dst_ip::inet << '172.16.0.0/12')
+GROUP BY igc.lat, igc.lon, igc.country;
