@@ -1,5 +1,5 @@
 SELECT 
-  EXTRACT(HOUR FROM timestamp) AS hour,
+  EXTRACT(HOUR FROM timestamp AT TIME ZONE 'Asia/Kolkata') AS hour,
   ROUND(SUM(download_bytes + upload_bytes) / 1048576.0, 2) AS total_mb
 FROM network_usage
 WHERE timestamp >= NOW() - INTERVAL '7 days'
